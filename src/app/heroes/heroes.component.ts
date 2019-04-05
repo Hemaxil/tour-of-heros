@@ -16,7 +16,8 @@ onSelectHero(hero: Hero) {
     this.selectedHero = hero;
 }
 getHeroes() {
-      this.heroes = this.heroService.getHeros();
+    this.heroService.getHeros()
+        .subscribe(heroes => this.heroes = heroes);
 }
   ngOnInit() {
       this.getHeroes();
